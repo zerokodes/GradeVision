@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const CGPAForecastSchema = new mongoose.Schema({
-    student: { type: mongoose.Schema.Types.ObjectId, ref: "Student", required: true },
+    student: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
     forecast: [
       {
         course: { type: mongoose.Schema.Types.ObjectId, ref: "Course", required: true },
