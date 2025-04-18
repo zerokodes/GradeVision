@@ -1,0 +1,29 @@
+// import { Ionicons } from "@expo/vector-icons";
+import { COLORS } from "../../styles/globalStyles";
+
+import { Check, EyeIcon, EyeOff, SmileIcon } from "lucide-react-native";
+
+export const Happy = () => {
+  //   return <Ionicons name="happy-outline" size={50} color={COLORS.primary} />;
+  return <SmileIcon color={COLORS.primary} size={80} strokeWidth={1.5} />;
+};
+
+export const Eye = ({ isPasswordVisible }) => {
+  return isPasswordVisible ? (
+    <EyeOff color={COLORS.primary} size={24} />
+  ) : (
+    <EyeIcon color={COLORS.primary} size={24} />
+  );
+};
+
+export const CheckIcon = () => {
+  return <Check color={COLORS.buttonText1} size={60} />;
+};
+
+{
+  /* <Ionicons
+    name={isPasswordVisible ? "eye-off" : "eye"}
+    size={24}
+    color={COLORS.text}
+  /> */
+}
