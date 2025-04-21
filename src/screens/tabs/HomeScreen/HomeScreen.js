@@ -1,49 +1,17 @@
 import React from "react";
-import { View, Text, StyleSheet, SafeAreaView } from "react-native";
-import styled from "styled-components/native";
+import { StyleSheet } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import { COLORS, SIZES } from "../../styles/globalStyles";
 import { useSelector, useDispatch } from "react-redux";
-import { Button } from "../../components/button";
-import { logout } from "../../redux/slices/authSlice";
-
-const Container = styled(SafeAreaView)`
-  flex: 1;
-  background-color: ${COLORS.background};
-`;
-
-const HomeContainer = styled(View)`
-  flex: 1;
-  padding: ${SIZES.padding}px;
-  justify-content: center;
-  align-items: center;
-`;
-
-const Title = styled(Text)`
-  color: ${COLORS.text};
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 16px;
-  text-align: center;
-`;
-
-const Subtitle = styled(Text)`
-  color: ${COLORS.lightText};
-  font-size: 18px;
-  text-align: center;
-  margin-bottom: 32px;
-`;
-
-const UserInfo = styled(Text)`
-  color: ${COLORS.primary};
-  font-size: 16px;
-  margin-bottom: 8px;
-`;
-
-const LogoutButtonContainer = styled(View)`
-  width: 50%;
-  margin-top: 32px;
-`;
+import { Button } from "../../../components/button";
+import { logout } from "../../../redux/slices/authSlice";
+import {
+  Subtitle,
+  Container,
+  HomeContainer,
+  Title,
+  UserInfo,
+  LogoutButtonContainer,
+} from "./styles";
 
 const HomeScreen = () => {
   const dispatch = useDispatch();

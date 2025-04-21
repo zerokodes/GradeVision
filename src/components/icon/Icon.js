@@ -1,7 +1,15 @@
 // import { Ionicons } from "@expo/vector-icons";
 import { COLORS } from "../../styles/globalStyles";
 
-import { Check, EyeIcon, EyeOff, SmileIcon } from "lucide-react-native";
+import {
+  Check,
+  EyeIcon,
+  EyeOff,
+  SmileIcon,
+  House,
+  BookOpenCheck,
+  Goal,
+} from "lucide-react-native";
 
 export const Happy = () => {
   //   return <Ionicons name="happy-outline" size={50} color={COLORS.primary} />;
@@ -18,6 +26,18 @@ export const Eye = ({ isPasswordVisible }) => {
 
 export const CheckIcon = () => {
   return <Check color={COLORS.buttonText1} size={60} />;
+};
+
+export const HouseIcon = ({ color }) => {
+  return <House color={color} size={24} strokeWidth={2.5} />;
+};
+
+export const GoalIcon = ({ color }) => {
+  return <Goal color={color} size={24} strokeWidth={2.5} />;
+};
+
+export const BookOpenCheckIcon = ({ color }) => {
+  return <BookOpenCheck color={color} size={24} strokeWidth={2.5} />;
 };
 
 {

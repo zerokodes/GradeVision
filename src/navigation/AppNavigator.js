@@ -5,7 +5,8 @@ import { useSelector } from "react-redux";
 // Import screens
 import OnboardingScreen from "../screens/onboarding/OnboardingScreen";
 import { SignInScreen } from "../screens/auth/SignIn";
-import HomeScreen from "../screens/tabs/HomeScreen";
+import HomeScreen from "../screens/tabs/HomeScreen/HomeScreen";
+import BottomTabs from "./BottomTabs";
 
 const Stack = createStackNavigator();
 
@@ -21,7 +22,8 @@ const AppNavigator = () => {
       }}
     >
       {!completed ? (
-        <Stack.Screen name="Onboarding" component={OnboardingScreen} />
+        // <Stack.Screen name="Onboarding" component={OnboardingScreen} />
+        <Stack.Screen name="BottomTabs" component={BottomTabs} />
       ) : !isAuthenticated ? (
         <Stack.Screen name="SignIn" component={SignInScreen} />
       ) : (

@@ -9,7 +9,7 @@ import { Input } from "../../../components/input";
 import { Button } from "../../../components/button";
 import { Ionicons } from "@expo/vector-icons";
 import { SocialLoginButton } from "../../../components/socialLoginBtn";
-import HomeScreen from "../../tabs/HomeScreen";
+import HomeScreen from "../../tabs/HomeScreen/HomeScreen";
 
 import {
   Container,
