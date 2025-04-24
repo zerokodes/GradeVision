@@ -1,4 +1,4 @@
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { HomeScreen } from "../screens/tabs/HomeScreen";
@@ -32,7 +32,7 @@ const BottomTabs = () => {
             <View
               style={[styles.tabIconContainer, focused && styles.activeTab]}
             >
-              <HouseIcon color={color} />;
+              <HouseIcon color={color} />
             </View>
           ),
         }}
@@ -45,7 +45,7 @@ const BottomTabs = () => {
             <View
               style={[styles.tabIconContainer, focused && styles.activeTab]}
             >
-              <GoalIcon color={color} />;
+              <GoalIcon color={color} />
             </View>
           ),
         }}
@@ -58,7 +58,7 @@ const BottomTabs = () => {
             <View
               style={[styles.tabIconContainer, focused && styles.activeTab]}
             >
-              <BookOpenCheckIcon color={color} />;
+              <BookOpenCheckIcon color={color} />
             </View>
           ),
         }}
@@ -66,8 +66,6 @@ const BottomTabs = () => {
     </Tab.Navigator>
   );
 };
-
-export default BottomTabs;
 
 const styles = StyleSheet.create({
   tabBar: {
@@ -93,5 +91,7 @@ const styles = StyleSheet.create({
     // backgroundColor: "rgba(255, 114, 192, 0.1)",
   },
 });
+
+export default BottomTabs;
 
 // FF72C0

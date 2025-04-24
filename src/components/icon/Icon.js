@@ -9,6 +9,9 @@ import {
   House,
   BookOpenCheck,
   Goal,
+  ChevronLeft,
+  Headset,
+  Bell,
 } from "lucide-react-native";
 
 export const Happy = () => {
@@ -38,6 +41,18 @@ export const GoalIcon = ({ color }) => {
 
 export const BookOpenCheckIcon = ({ color }) => {
   return <BookOpenCheck color={color} size={24} strokeWidth={2.5} />;
+};
+
+export const ChevronLeftIcon = ({ color }) => {
+  return <ChevronLeft color={color} size={24} strokeWidth={1.5} />;
+};
+
+export const HeadsetIcon = () => {
+  return <Headset color={COLORS.primary} size={20} strokeWidth={2.5} />;
+};
+
+export const BellIcon = () => {
+  return <Bell color={COLORS.primary} size={20} strokeWidth={2.5} />;
 };
 
 {

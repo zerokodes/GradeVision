@@ -12,6 +12,8 @@ import {
   UserInfo,
   LogoutButtonContainer,
 } from "./styles";
+import GradientBackground from "../../../components/GradientBackground";
+import Header from "../../../components/Header";
 
 const HomeScreen = () => {
   const dispatch = useDispatch();
@@ -24,14 +26,10 @@ const HomeScreen = () => {
 
   return (
     <Container>
-      <LinearGradient
-        colors={["rgba(255, 82, 181, 0.1)", "rgba(255, 82, 181, 0)"]}
-        start={{ x: 0.5, y: 0 }}
-        end={{ x: 0.5, y: 0.3 }}
-        style={StyleSheet.absoluteFill}
-      />
+      <GradientBackground />
+      <Header title="Stella" subTitle="Computer Engineering" />
       <HomeContainer>
-        <Title>Welcome to GPA Tracker!</Title>
+        {/* <Title>Welcome to GPA Tracker!</Title>
         <Subtitle>Your personal academic performance tracker</Subtitle>
 
         <UserInfo>
@@ -42,7 +40,7 @@ const HomeScreen = () => {
 
         <LogoutButtonContainer>
           <Button title="Logout" onPress={handleLogout} />
-        </LogoutButtonContainer>
+        </LogoutButtonContainer> */}
       </HomeContainer>
     </Container>
   );
