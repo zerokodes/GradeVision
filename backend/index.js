@@ -3,6 +3,12 @@ const app = express();
 const dotenv = require("dotenv");
 const connectDB = require("./database/Connect");
 const cors = require('cors');
+const userRoute = require("./routes/user");
+const universityRoute = require("./routes/university");
+const departmentRoute = require("./routes/department");
+const courseRoute = require("./routes/course");
+const forecastRoute = require("./routes/CGPAForecast");
+const actualRoute = require("./routes/ActualCGPA");
 
 app.use(express.json());
 
@@ -12,6 +18,14 @@ app.use(cors({
   origin: '*'
 }))
 
+
+//routes
+app.use("/api/v1/users", userRoute);
+app.use("/api/v1/universities", universityRoute);
+app.use("/api/v1/departments", departmentRoute);
+app.use("/api/v1/courses", courseRoute);
+app.use("/api/v1/forecasts", forecastRoute);
+app.use("/api/v1/actuals", actualRoute);
 
 
 // connect to database

@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const { verifyToken, verifyAdmin } = require('../middleware/auth');
 
 const {
     createDepartment,
@@ -9,10 +10,10 @@ const {
     deleteDepartment,
   } = require("../controllers/department");
 
-router.route("/").post(createDepartment);
-router.route("/").get(getAllDepartment);
-router.route("/:id").get(getDepartmentById);
-router.route("/:id").put(updateDepartment);
-router.route("/:id").delete(deleteDepartment);
+router.route("/").post(verifyToken, verifyAdmin,createDepartment);
+router.route("/").get(verifyToken, getAllDepartment);
+router.route("/:id").get(verifyToken, getDepartmentById);
+router.route("/:id").patch(verifyToken, verifyAdmin, updateDepartment);
+router.route("/:id").delete(verifyToken, verifyAdmin, deleteDepartment);
 
 module.exports = router;

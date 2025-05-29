@@ -39,7 +39,7 @@ const mongoose = require('mongoose');
   const getUniversityById = async(req, res) => {
     try {
       if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
-        res.status(200).json({success: true, message: 'Invalid Id Format',code:200});
+        return res.status(200).json({success: true, message: 'Invalid Id Format',code:200});
       }
       const university = await University.findById(req.params.id);
       if (!university) return res.status(200).json({success: true, message: 'University not found', code:200});
@@ -57,7 +57,7 @@ const mongoose = require('mongoose');
   const updateUniversity = async(req, res) => {
     try {
       if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
-        res.status(200).json({success: true, message: 'Invalid Id Format',code:200});
+        return res.status(200).json({success: true, message: 'Invalid Id Format',code:200});
       }
       const university = await University.findByIdAndUpdate(req.params.id, req.body, { new: true });
       if (!university) return res.status(200).json({success: true, message: 'University not found', code:200});
@@ -75,7 +75,7 @@ const mongoose = require('mongoose');
   const deleteUniversity =  async(req, res) => {
     try {
       if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
-        res.status(200).json({success: true, message: 'Invalid Id Format',code:200});
+       return  res.status(200).json({success: true, message: 'Invalid Id Format',code:200});
       }
       const university = await University.findByIdAndDelete(req.params.id);
       if (!university) return res.status(200).json({success: true, message: 'University not found', code:200});
