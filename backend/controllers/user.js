@@ -365,6 +365,38 @@ const sendForgetPasswordMail = async(req, res) => {
 }
 
 
+/**
+ * 
+ * @param {*} req 
+ * @param {*} res 
+ * 
+ * To identify the currently authenticated user (and fetch their profile data) 
+ * without requiring them to re-submit credentials.
+ *  It relies solely on a valid token.
+ * @returns 
+ */
+const me = async(req, res) => {
+  try {
+    // `verifyToken` should already have set req.userId
+    const userId = req.user.id;
+    if (!userId) {
+      return res.status(200).json({success:false, message: 'Not authenticated', code: 200 });
+    }
+
+    const user = await User.findById(userId).select('-password');
+    if (!user) {
+      return res.status(200).json({success:false, message: 'User not found', code:200 });
+    }
+
+    // Return the user data (minus sensitive fields)
+    return res.json({ user });
+  } catch (err) {
+    console.error('AuthController.me error:', err);
+    return res.status(500).json({success:false, error:err.message, message: 'Internal server error', code:500 });
+  }
+}
+
+
   module.exports = {
     registerUser,
     loginUser,
@@ -372,5 +404,6 @@ const sendForgetPasswordMail = async(req, res) => {
     updateUser,
     verifyEmail,
     sendVerificationMail,
-    sendForgetPasswordMail
+    sendForgetPasswordMail,
+    me,
   }
