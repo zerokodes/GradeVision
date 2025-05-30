@@ -9,6 +9,7 @@ const departmentRoute = require("./routes/department");
 const courseRoute = require("./routes/course");
 const forecastRoute = require("./routes/CGPAForecast");
 const actualRoute = require("./routes/ActualCGPA");
+const adminRoute = require("./routes/admin")
 
 app.use(express.json());
 
@@ -26,6 +27,7 @@ app.use("/api/v1/departments", departmentRoute);
 app.use("/api/v1/courses", courseRoute);
 app.use("/api/v1/forecasts", forecastRoute);
 app.use("/api/v1/actuals", actualRoute);
+app.use("/api/v1/admins", adminRoute)
 
 
 // connect to database
